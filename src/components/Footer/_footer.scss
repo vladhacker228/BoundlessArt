@@ -1,0 +1,88 @@
+.footer-block {
+  background: url('#{$img-path}/footer-bg.png') no-repeat center / cover;
+  width: 100%;
+  z-index: 10;
+  color: $color-white;
+  padding: 40px 0;
+  margin-top: auto;
+
+  @include desktop-sm {
+    background: $color-black;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    margin-top: 20px;
+  }
+  @include tablet { padding-top: 60px; padding-bottom: 20px; }
+
+  &, a {
+    color: $color-white;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 140px;
+    width: $content-width;
+    max-width: 95%;
+    margin: 0 auto;
+
+    @include desktop-sm { padding-top: 100px; max-width: 90%; }
+    @include laptop { width: 95%; }
+    @include tablet { flex-direction: column; padding-top: 80px; gap: 30px; }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include tablet { align-items: center; }
+  }
+
+  &__logo {
+    width: 73px;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    background: url('#{$img-path}/logo.png') no-repeat center / cover;
+  }
+
+  &__link {
+    width: 213px;
+    display: block;
+    background: url('#{$img-path}/cons.png') no-repeat center / cover;
+    text-indent: -9999px;
+    overflow: hidden;
+    white-space: nowrap;
+    aspect-ratio: 213 / 107;
+  }
+
+  &__social {
+    display: flex;
+    gap: 67px;
+    margin-left: 0;
+    justify-content: center;
+
+    @include laptop { margin-left: 0; gap: 30px; }
+    @include tablet { margin: 40px 0 0 0; gap: 40px; }
+    @include mobile { gap: 20px; }
+  }
+
+  &__social-icon {
+    display: block;
+    width: 46px;
+    aspect-ratio: 1 / 1;
+    transition: opacity 0.2s;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    @include mobile { width: 35px; }
+
+    &:hover { opacity: 0.8; }
+
+    &--meta { background-image: url('#{$img-path}/facebook.png'); }
+    &--instagram { background-image: url('#{$img-path}/inst.png'); }
+    &--twitter { background-image: url('#{$img-path}/tweet.png'); }
+  }
+}
