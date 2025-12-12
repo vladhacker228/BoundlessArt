@@ -1,0 +1,147 @@
+.header-bg {
+  background: url('#{$img-path}/background.png') no-repeat center / cover;
+  width: 100%;
+  padding-bottom: 280px;
+  position: relative;
+  transition: background 0.3s ease;
+
+  @include desktop-sm {
+    background: $color-black;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+  }
+
+  @include laptop {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+  }
+  
+  @include mobile {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.main-content-wrapper {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $content-width;
+  width: 95%;
+  margin: 106px auto 0;
+  color: $color-white;
+  padding: 0 15px;
+
+  @include desktop-sm { margin-top: 0; }
+  
+  @include tablet {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    @include tablet { flex-direction: column; width: 100%; }
+  }
+
+  &__logo {
+    width: 73px;
+    background: url('#{$img-path}/logo.png') no-repeat center / contain;
+    flex-shrink: 0;
+    aspect-ratio: 73 / 71;
+    @include tablet { margin-bottom: 15px; }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 525px;
+    margin-left: 118px;
+    margin-right: 53px;
+
+    @include desktop-sm { margin-left: 50px; width: auto; gap: 30px; }
+    @include laptop { margin-left: 30px; margin-right: 20px; }
+    @include tablet { margin: 0; width: 100%; justify-content: center; gap: 40px; }
+    @include mobile { flex-direction: column; gap: 15px; }
+  }
+
+  &__nav-link { color: $color-white; }
+
+  &__nav-text {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.2; // Adjusted for better fit
+    letter-spacing: -2px;
+    text-transform: lowercase;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+
+    @include desktop-sm { font-size: 24px; }
+    @include laptop { font-size: 20px; }
+    @include mobile { font-size: 18px; }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    @include tablet { width: 100%; justify-content: center; }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    background-color: $color-white;
+    border-radius: 30px;
+    padding: 12px 20px;
+    min-width: 250px;
+
+    @include desktop-sm { min-width: auto; }
+    @include tablet { width: 70%; max-width: 300px; }
+    @include mobile { width: 100%; }
+  }
+
+  &__search-input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 200px;
+    background: transparent;
+    color: $color-black;
+    @include desktop-sm { width: 120px; }
+    @include tablet { width: 100%; }
+  }
+
+  &__search-icon {
+    width: 33px;
+    aspect-ratio: 1 / 1;
+    background: url('#{$img-path}/serarch.png') no-repeat center / contain;
+    flex-shrink: 0;
+    @include laptop { width: 25px; }
+  }
+
+  &__profile {
+    width: 60px;
+    background-color: #111;
+    border-radius: 50%;
+    background-image: url('#{$img-path}/you.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+  }
+}
