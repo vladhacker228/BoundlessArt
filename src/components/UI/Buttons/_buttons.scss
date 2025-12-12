@@ -1,0 +1,70 @@
+.back-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 366px;
+    height: 55px;
+    background-color: $color-accent;
+    color: $color-white;
+    border: none;
+    border-radius: 10px;
+    padding: 0 15px 0 30px;
+    margin: 50px auto 0 auto;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+    
+    // Slight variation for Shop page (centered)
+    .posters-list & {
+        justify-content: center;
+        gap: 15px;
+        padding: 0 15px;
+        margin-bottom: 100px;
+    }
+
+    @include tablet { width: 90%; max-width: 300px; }
+    @include mobile { height: 45px; font-size: 16px; }
+
+    &:hover {
+        background-color: $color-white;
+        color: $color-accent;
+    }
+
+    &__icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 70%;
+        transition: background-color 0.3s, background-image 0.3s;
+        background-color: $color-white;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z'/%3E%3C/svg%3E");
+    }
+
+    &:hover &__icon {
+        background-color: $color-accent;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z'/%3E%3C/svg%3E");
+    }
+}
+
+.join-btn {
+    background: $color-accent;
+    color: $color-white;
+    border: none;
+    padding: 12px 112px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 0 auto;
+    display: block;
+
+    @include laptop { padding: 12px 60px; }
+    @include tablet { padding: 12px 60px; }
+    @include mobile { width: 90%; max-width: 300px; padding: 12px 0; }
+
+    &:hover { background: $color-white; color: $color-black; }
+}
